@@ -13,12 +13,12 @@ function Employee(name, age, jobTitle){
 	this.jobTitle = jobTitle
 }
 
+Employee.prototype = Object.create(Person.prototype);
+Employee.prototype.constructor = Employee;
+
 Employee.prototype.jobGreet = function() {
 	console.log("Hello, my name is , ", super.name ," I am ", super.age,  " years old, and my job title is ", this.jobTitle)
 }
-
-Employee.prototype = Object.create(Person.prototype);
-Employee.prototype.constructor = Employee;
 
 // Do not change code below this line
 window.Person = Person;
